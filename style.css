@@ -1,0 +1,358 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.sectionOne,
+.sectionTwo,
+.sectionThree {
+  min-height: 100vh;
+  padding: 0px 30px;
+  background-color: #fe4d80;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text,
+.illustratedDiv {
+  flex: 1;
+}
+
+.text h3 {
+  font-size: 4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  color: #192531;
+}
+
+#light-on {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  transition: 0.5s;
+}
+
+#spark {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+#t-left,
+#t-right,
+#t-spin {
+  fill: #192531;
+  fill-opacity: 0.75;
+  transition: 0.5s;
+}
+
+#bulb-area {
+  fill: rgba(255, 255, 255, 0.6);
+  transition: 0.5s;
+}
+
+#shadow-on {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: 0.5s;
+}
+
+.activated .active #t-left,
+.activated .active #t-right,
+.activated .active #t-spin {
+  fill: white;
+}
+
+.activated .active #bulb-area {
+  fill: #f4d242;
+  fill-opacity: 0.85;
+}
+
+.activated .active #spark {
+  opacity: 1;
+}
+
+.activated .active #light-on {
+  transform: translateY(-30px);
+}
+
+.activated .active #shadow-on {
+  transform: scale(0.75);
+}
+
+/* Section Two */
+
+.sectionTwo {
+  background-color: #192531;
+}
+
+.sectionTwo .text h3 {
+  color: white;
+}
+
+.activated #left-pencils {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: leftOut 1s ease-in-out forwards;
+}
+
+.activated #right-pencils {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: rightOut 1s ease-in-out forwards;
+}
+
+@keyframes leftOut {
+  100% {
+    transform: translateX(-170px);
+  }
+}
+
+@keyframes rightOut {
+  100% {
+    transform: translateX(190px);
+  }
+}
+
+.activated #center-pencil {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: centerUp 1s ease-in-out 0.5s forwards;
+}
+
+@keyframes centerUp {
+  100% {
+    transform: translateY(-100px);
+  }
+}
+
+.activated #body-init {
+  animation: bodyInitial 0.5s ease-in-out 0.5s forwards;
+}
+
+@keyframes bodyInitial {
+  100% {
+    opacity: 0;
+  }
+}
+
+.activated #cape {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transform-box: fill-box;
+  transform-origin: center top;
+  transform: scaleY(0);
+  animation: capeIn 0.5s ease-in-out 1s forwards;
+}
+
+@keyframes capeIn {
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+/* Section Three */
+
+.sectionThree {
+  background-color: white;
+}
+
+.activated #front-box,
+.activated #back-box {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  transform: scaleY(0);
+  animation: boxAndTreeIn 0.5s ease-in-out forwards;
+}
+
+#back-box {
+  animation-delay: 0.5s;
+}
+
+@keyframes boxAndTreeIn {
+  0% {
+    transform: scaleY(0);
+  }
+
+  80% {
+    transform: scaleY(1.1);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+.activated #front-tree,
+.activated #back-tree {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  transform: scaleY(0);
+  animation: boxAndTreeIn 0.5s ease-in-out 0.5s forwards;
+}
+
+.activated #tree-1,
+.activated #tree-2,
+.activated #tree-3 {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(0);
+  animation: treeIn 0.5s ease-in-out forwards;
+}
+
+.activated #tree-2 {
+  animation-delay: 0.5s;
+}
+
+.activated #tree-3 {
+  animation-delay: 1s;
+}
+
+@keyframes treeIn {
+  0% {
+    transform: scale(0);
+  }
+
+  80% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.activated #whole-building {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  transform: scaleY(0);
+  animation: boxAndTreeIn 0.5s ease-in-out 1s forwards;
+}
+
+.activated #tree-floor {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  transform: scaleY(0);
+  animation: boxAndTreeIn 0.5s ease-in-out 1s forwards;
+}
+
+/* Section Four */
+
+.sectionFour {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-image: url(feviBG.svg);
+  background-size: 35%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #192531;
+}
+
+.logoDiv {
+  width: 720px;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.activated #fevi {
+  transform-origin: center;
+  transform: translateX(50%) scale(0);
+  animation: logoFevi 1.5s ease-in-out forwards;
+}
+
+@keyframes logoFevi {
+  40% {
+    transform: translateX(50%) scale(1.1);
+  }
+
+  50%,
+  70% {
+    transform: translateX(50%) scale(0.9);
+  }
+
+  100% {
+    transform: translateX(0%) scale(1);
+  }
+}
+
+.activated #l-m {
+  stroke-dasharray: 335.2345886230469px;
+  stroke-dashoffset: 335.2345886230469px;
+  fill: white;
+  fill-opacity: 0;
+  stroke-width: 1px;
+  stroke: white;
+  animation: textIn 1.5s ease-in-out 1.5s forwards;
+}
+
+.activated #l-a-start {
+  stroke-dasharray: 241.74526977539062px;
+  stroke-dashoffset: 241.74526977539062px;
+  fill: white;
+  fill-opacity: 0;
+  stroke-width: 1px;
+  stroke: white;
+  animation: textIn 1.5s ease-in-out 1.5s forwards;
+}
+
+.activated #l-o {
+  stroke-dasharray: 227.6663818359375px;
+  stroke-dashoffset: 227.6663818359375px;
+  fill: white;
+  fill-opacity: 0;
+  stroke-width: 1px;
+  stroke: white;
+  animation: textIn 1.5s ease-in-out 1.5s forwards;
+}
+
+.activated #l-t {
+  stroke-dasharray: 158.3896026611328px;
+  stroke-dashoffset: 158.3896026611328px;
+  fill: white;
+  fill-opacity: 0;
+  stroke-width: 1px;
+  stroke: white;
+  animation: textIn 1.5s ease-in-out 1.5s forwards;
+}
+
+.activated #l-a-last {
+  stroke-dasharray: 241.79698181152344px;
+  stroke-dashoffset: 241.79698181152344px;
+  fill: white;
+  fill-opacity: 0;
+  stroke-width: 1px;
+  stroke: white;
+  animation: textIn 1.5s ease-in-out 1.5s forwards;
+}
+@keyframes textIn {
+  70% {
+    stroke-dashoffset: 0px;
+    fill-opacity: 0;
+    stroke-width: 1px;
+  }
+
+  100% {
+    stroke-dashoffset: 0px;
+    fill-opacity: 1;
+    stroke-width: 0px;
+  }
+}
